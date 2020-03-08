@@ -12,8 +12,11 @@ git clone https://github.com/llvm/llvm-project.git
 
 * ``cmake -G <generator> [options] ../llvm``
 
-  For example, if you want to build only LLVM and Clang on Linux with release version, you can run: 
-  * ``cmake -G "Unix Makefiles" -DLLVM_ENABLE_PROJECTS="clang" -DCMAKE_BUILD_TYPE=Release``
+  For example, if you want to build only LLVM and Clang on Linux with release version, you can run:
+  * ``cmake -DLLVM_ENABLE_PROJECTS=clang -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release ../llvm-project/llvm/``
+
+  If you want to build with libcxx and libcxxabi, you can run:
+  * ``cmake -DLLVM_ENABLE_PROJECTS="clang;libcxx;libcxxabi" -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release ../llvm-project/llvm/``
 
   Some common build system generators are:
 
